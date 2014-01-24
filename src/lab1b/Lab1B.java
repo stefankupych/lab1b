@@ -45,6 +45,12 @@ public class Lab1B {
       } else {
         System.out.printf("The change from $100.00 is $%.2f\n", (float) change / 100); //total change is displayed in dollars and cents
       }
+
+      /**
+       * This for loop populates the <code>money</code> array with the amounts
+       * of change, prints the amount of the particular denomination (if any
+       * exist), and removes them from the total <code>change</code> variable.
+       */
       for (int count = 0; count < 9; count++) {
         money[count] = change / moneyValues[count];  //integer division determines amount of change
         if (money[count] > 0) { //if any of this denomination exist
