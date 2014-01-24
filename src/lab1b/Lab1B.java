@@ -11,7 +11,7 @@ import java.util.Scanner;
  * <pre>
  * Author:        Stefan Kupych 000334450
  * Date created:  January 17, 2014
- * Last modified: January 17, 2014
+ * Last modified: January 24, 2014
  * Purpose:       This program will accept a currency amount from the user of
  *                $100 or less, make change for $100 and output the amount in
  *                denominations of $20, $10, $5, $2, $1, quarters, dimes,
@@ -40,19 +40,19 @@ public class Lab1B {
     System.out.print("Enter the price of the purchase: $");
     while (input.hasNextFloat()) {
       change = (int) (10000 - (input.nextFloat() * 100));
-      if (change > 10000 || change < 0) {
+      if (change > 10000 || change < 0) { //error message to catch out-of-range values
         System.err.println("Error: price is outside of range!");
       } else {
-        System.out.printf("The change from $100.00 is $%.2f\n", (float) change / 100);
+        System.out.printf("The change from $100.00 is $%.2f\n", (float) change / 100); //total change is displayed in dollars and cents
       }
-      for (int i = 0; i < 9; i++) {
-        money[i] = change / moneyValues[i];
-        if (money[i] > 0) {
-          System.out.printf("Number of %s is: %d\n", moneyNames[i], money[i]);
+      for (int count = 0; count < 9; count++) {
+        money[count] = change / moneyValues[count];  //integer division determines amount of change
+        if (money[count] > 0) { //if any of this denomination exist
+          System.out.printf("Number of %s is:\t%d\n", moneyNames[count], money[count]); //display denomination and amount
         }
-        change %= moneyValues[i];
+        change %= moneyValues[count]; //remove from total change using modulo
       }
-      System.out.print("\nInput new price (or q to quit): $");
+      System.out.print("\nInput new price (or q to quit): $"); //allow user to input another value or quit
     }
   }
 }
