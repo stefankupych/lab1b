@@ -16,6 +16,9 @@ import java.util.Scanner;
  *                $100 or less, make change for $100 and output the amount in
  *                denominations of $20, $10, $5, $2, $1, quarters, dimes,
  *                nickels and pennies.
+ * STATEMENT:   I, Stefan Kupych 000334450, certify that this material is my
+ *              original work. No other person's work has been used without
+ *              due acknowledgement.
  * </pre>
  *
  * @author stefankupych
